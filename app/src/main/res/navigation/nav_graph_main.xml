@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/nav_graph_main"
+  app:startDestination="@id/splashFragment">
+
+  <fragment
+    android:id="@+id/splashFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.startup.splash.SplashFragment"
+    android:label="fragment_splash"
+    tools:layout="@layout/fragment_splash" >
+    <action
+      android:id="@+id/action_splashFragment_to_homeFragment"
+      app:destination="@id/homeFragment"
+      app:popUpTo="@id/splashFragment"
+      app:popUpToInclusive="true" />
+    <action
+      android:id="@+id/action_splashFragment_to_loginFragment"
+      app:destination="@id/loginFragment"
+      app:enterAnim="@anim/nav_default_enter_anim"
+      app:exitAnim="@anim/nav_default_exit_anim"
+      app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+      app:popExitAnim="@anim/nav_default_pop_exit_anim"
+      app:popUpTo="@id/splashFragment"
+      app:popUpToInclusive="true" />
+  </fragment>
+  <fragment
+    android:id="@+id/loginFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.startup.signin.SignInFragment"
+    android:label="fragment_login"
+    tools:layout="@layout/fragment_signin" >
+    <action
+      android:id="@+id/action_loginFragment_to_homeFragment"
+      app:destination="@id/homeFragment"
+      app:popUpTo="@id/loginFragment"
+      app:popUpToInclusive="true" />
+  </fragment>
+  <fragment
+    android:id="@+id/homeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.home.HomeFragment"
+    android:label="fragment_home"
+    tools:layout="@layout/fragment_home" >
+    <action
+      android:id="@+id/action_homeFragment_to_buildingListFragment"
+      app:destination="@id/buildingListFragment" />
+    <action
+      android:id="@+id/action_homeFragment_to_loginFragment"
+      app:destination="@id/loginFragment"
+      app:popUpTo="@id/homeFragment"
+      app:popUpToInclusive="true" />
+    <action
+      android:id="@+id/action_homeFragment_to_profileFragment"
+      app:destination="@id/profileFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/bookingHomeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.bookings.BookingHomeFragment"
+    android:label="fragment_booking_home"
+    tools:layout="@layout/fragment_booking_home" />
+  <fragment
+    android:id="@+id/buildingListFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.home.booking.BuildingListFragment"
+    android:label="fragment_building_list"
+    tools:layout="@layout/fragment_building_list" >
+    <action
+      android:id="@+id/action_buildingListFragment_to_buildingHomeFragment"
+      app:destination="@id/buildingHomeFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/buildingHomeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.home.booking.BuildingHomeFragment"
+    android:label="fragment_building_home"
+    tools:layout="@layout/fragment_building_home" >
+    <action
+      android:id="@+id/action_buildingHomeFragment_to_venueHomeFragment"
+      app:destination="@id/venueHomeFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/venueHomeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.home.booking.VenueHomeFragment"
+    android:label="fragment_venue_home"
+    tools:layout="@layout/fragment_venue_home" >
+    <action
+      android:id="@+id/action_venueHomeFragment_to_createBookingFragment"
+      app:destination="@id/createBookingFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/createBookingFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.home.booking.CreateBookingFragment"
+    android:label="fragment_create_booking"
+    tools:layout="@layout/fragment_create_booking" />
+  <fragment
+    android:id="@+id/bookingRequestListFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.bookingrequest.BookingRequestListFragment"
+    android:label="fragment_booking_request_list"
+    tools:layout="@layout/fragment_booking_request_list" />
+  <fragment
+    android:id="@+id/bookingRequestHomeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.bookingrequest.BookingRequestHomeFragment"
+    android:label="fragment_booking_request_home"
+    tools:layout="@layout/fragment_booking_request_home" />
+  <fragment
+    android:id="@+id/profileFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.home.ProfileFragment"
+    android:label="fragment_profile"
+    tools:layout="@layout/fragment_profile" >
+    <action
+      android:id="@+id/action_profileFragment_to_editProfileFragment"
+      app:destination="@id/editProfileFragment" />
+    <action
+      android:id="@+id/action_profileFragment_to_aboutFragment"
+      app:destination="@id/aboutFragment" />
+    <action
+      android:id="@+id/action_profileFragment_to_manageUsersHomeFragment"
+      app:destination="@id/manageUsersHomeFragment" />
+    <action
+      android:id="@+id/action_profileFragment_to_manageVenuesHomeFragment"
+      app:destination="@id/manageVenuesHomeFragment" />
+    <action
+      android:id="@+id/action_profileFragment_to_manageBuildingsFragment"
+      app:destination="@id/manageBuildingsFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/bookingsListFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.bookings.BookingsListFragment"
+    android:label="fragment_bookings_list"
+    tools:layout="@layout/fragment_bookings_list" >
+    <action
+      android:id="@+id/action_bookingsListFragment_to_bookingHomeFragment"
+      app:destination="@id/bookingHomeFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/addBuildingFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.buildings.add.AddBuildingFragment"
+    android:label="fragment_add_building"
+    tools:layout="@layout/fragment_add_building" />
+  <fragment
+    android:id="@+id/viewBuildingFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.buildings.view.details.ViewBuildingFragment"
+    android:label="fragment_view_building"
+    tools:layout="@layout/fragment_view_building" >
+    <action
+      android:id="@+id/action_viewBuildingFragment_to_editBuildingFragment"
+      app:destination="@id/editBuildingFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/editBuildingFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.buildings.edit.EditBuildingFragment"
+    android:label="EditBuildingFragment" />
+  <fragment
+    android:id="@+id/editProfileFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.edit.EditProfileFragment"
+    android:label="fragment_edit_profile"
+    tools:layout="@layout/fragment_edit_profile" />
+  <fragment
+    android:id="@+id/aboutFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.about.AboutFragment"
+    android:label="fragment_about"
+    tools:layout="@layout/fragment_about" />
+  <fragment
+    android:id="@+id/manageUsersHomeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.users.home.ManageUsersHomeFragment"
+    android:label="fragment_manage_users_home"
+    tools:layout="@layout/fragment_manage_users_home" >
+    <action
+      android:id="@+id/action_manageUsersHomeFragment_to_addUsersFragment"
+      app:destination="@id/addUsersFragment" />
+    <action
+      android:id="@+id/action_manageUsersHomeFragment_to_usersListFragment"
+      app:destination="@id/usersListFragment" />
+  </fragment>
+  <fragment
+    android:id="@+id/manageVenuesHomeFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.venues.home.ManageVenuesHomeFragment"
+    android:label="fragment_manage_venues_home"
+    tools:layout="@layout/fragment_manage_venues_home" />
+  <fragment
+    android:id="@+id/manageBuildingsFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.buildings.home.ManageBuildingsFragment"
+    android:label="fragment_manage_buildings"
+    tools:layout="@layout/fragment_manage_buildings" >
+    <action
+      android:id="@+id/action_manageBuildingsFragment_to_viewBuildingFragment"
+      app:destination="@id/viewBuildingFragment" />
+    <action
+      android:id="@+id/action_manageBuildingsFragment_to_addBuildingFragment"
+      app:destination="@id/addBuildingFragment" />
+    <action
+      android:id="@+id/action_manageBuildingsFragment_to_buildingsListFragment"
+      app:destination="@id/buildingsListFragment"/>
+  </fragment>
+  <fragment
+    android:id="@+id/addUsersFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.users.add.AddUsersFragment"
+    android:label="fragment_add_users"
+    tools:layout="@layout/fragment_add_users" />
+  <fragment
+    android:id="@+id/usersListFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.users.list.UsersListFragment"
+    android:label="fragment_users_list"
+    tools:layout="@layout/fragment_users_list" />
+  <fragment
+    android:id="@+id/buildingsListFragment"
+    android:name="com.geekhaven.venuebookingsystem.ui.profile.manage.buildings.view.list.BuildingsListFragment"
+    android:label="fragment_buildings_list"
+    tools:layout="@layout/fragment_buildings_list" >
+    <action
+      android:id="@+id/action_buildingsListFragment_to_editBuildingFragment"
+      app:destination="@id/editBuildingFragment"/>
+  </fragment>
+</navigation>

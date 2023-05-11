@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  style="@style/CardTheme"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginBottom="12dp">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+      android:id="@+id/userListItemNameLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:fontFamily="@font/poppins_regular"
+      android:text="Name:"
+      android:textColor="#0B0C24"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+      android:id="@+id/userListItemName"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="12dp"
+      android:layout_marginEnd="12dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#A3AFC5"
+      android:textSize="12sp"
+      app:layout_constraintBottom_toBottomOf="@+id/userListItemNameLabel"
+      app:layout_constraintEnd_toStartOf="@+id/btnUserListItemEdit"
+      app:layout_constraintStart_toEndOf="@+id/userListItemNameLabel"
+      app:layout_constraintTop_toTopOf="@+id/userListItemNameLabel" />
+
+    <TextView
+      android:id="@+id/userListItemRoleLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="Role:"
+      android:textColor="#0B0C24"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userListItemNameLabel" />
+
+    <TextView
+      android:id="@+id/userListItemRole"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="12dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#A3AFC5"
+      android:textSize="12sp"
+      app:layout_constraintBottom_toBottomOf="@+id/userListItemRoleLabel"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/userListItemRoleLabel"
+      app:layout_constraintTop_toTopOf="@+id/userListItemRoleLabel" />
+
+    <TextView
+      android:id="@+id/userListItemAuthorityLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="12dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="Reporting Authority:"
+      android:textColor="#0B0C24"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/userListItemRoleLabel" />
+
+    <TextView
+      android:id="@+id/userListItemAuthority"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="12dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#A3AFC5"
+      android:textSize="12sp"
+      app:layout_constraintBottom_toBottomOf="@+id/userListItemAuthorityLabel"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/userListItemAuthorityLabel"
+      app:layout_constraintTop_toTopOf="@+id/userListItemAuthorityLabel" />
+
+    <ImageButton
+      android:id="@+id/btnUserListItemEdit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="12dp"
+      android:background="@android:color/transparent"
+      app:layout_constraintBottom_toBottomOf="@+id/userListItemName"
+      app:layout_constraintEnd_toStartOf="@+id/btnUserListItemRemove"
+      app:layout_constraintTop_toTopOf="@+id/userListItemName"
+      app:srcCompat="@drawable/ic_edit" />
+
+    <ImageButton
+      android:id="@+id/btnUserListItemRemove"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@android:color/transparent"
+      app:layout_constraintBottom_toBottomOf="@+id/btnUserListItemEdit"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/btnUserListItemEdit"
+      app:srcCompat="@drawable/ic_delete" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

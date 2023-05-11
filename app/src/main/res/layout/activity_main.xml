@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".activities.MainActivity"
+  android:orientation="vertical">
+
+  <com.google.android.material.appbar.AppBarLayout
+    android:id="@+id/appBarMain"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundPrimary"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/titleLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_marginBottom="24dp">
+
+      <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+          android:id="@+id/tvMainTitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/poppins_semibold"
+          android:text="TextView"
+          android:textAlignment="center"
+          android:textColor="@color/colorText"
+          android:textSize="16sp"
+          android:textStyle="bold"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toStartOf="@+id/imgTitleIcon"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+          android:id="@+id/imgTitleIcon"
+          android:layout_width="wrap_content"
+          android:layout_height="0dp"
+          android:layout_marginStart="16dp"
+          android:background="@android:color/transparent"
+          app:layout_constraintBottom_toBottomOf="@+id/tvMainTitle"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/tvMainTitle"
+          app:layout_constraintTop_toTopOf="@+id/tvMainTitle"
+          app:srcCompat="@drawable/ic_edit_round" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/searchView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="24dp"
+      android:layout_marginBottom="16dp"
+      app:cardBackgroundColor="#FFFFFF "
+      app:cardCornerRadius="14dp"
+      app:contentPadding="16dp"
+      app:strokeWidth="0dp">
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+          android:id="@+id/imgSearchIcon"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/ic_search" />
+
+        <EditText
+          android:id="@+id/inputSearchBar"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginEnd="16dp"
+          android:background="@color/white"
+          android:fontFamily="@font/poppins_regular"
+          android:hint="Search"
+          android:textSize="14sp"
+          app:boxBackgroundMode="none"
+          app:boxStrokeWidth="0dp"
+          app:layout_constraintBottom_toBottomOf="@+id/imgSearchIcon"
+          app:layout_constraintEnd_toStartOf="@+id/btnSearchFilter"
+          app:layout_constraintStart_toEndOf="@+id/imgSearchIcon"
+          app:layout_constraintTop_toTopOf="@+id/imgSearchIcon" />
+
+        <ImageButton
+          android:id="@+id/btnSearchFilter"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:background="@android:color/transparent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/ic_filter" />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+  </com.google.android.material.appbar.AppBarLayout>
+
+  <androidx.fragment.app.FragmentContainerView
+    android:id="@+id/navHostMain"
+    android:name="androidx.navigation.fragment.NavHostFragment"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    app:defaultNavHost="true"
+    app:navGraph="@navigation/nav_graph_main"
+    app:layout_constraintBottom_toTopOf="@+id/bnvMain"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/appBarMain"/>
+
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/bnvMain"
+    style="@style/Widget.Material3.BottomNavigationView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="@color/colorWhite"
+    app:elevation="5dp"
+    app:itemTextAppearanceActive="@style/BottomNavigationActiveItemStyle"
+    app:itemTextAppearanceInactive="@style/BottomNavigationInactiveItemStyle"
+    app:labelVisibilityMode="labeled"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:menu="@menu/bottom_navigation_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
