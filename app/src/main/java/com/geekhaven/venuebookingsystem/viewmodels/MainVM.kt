@@ -7,13 +7,16 @@ import androidx.lifecycle.viewModelScope
 import com.geekhaven.venuebookingsystem.api.ApiHandler
 import com.geekhaven.venuebookingsystem.api.models.*
 import com.geekhaven.venuebookingsystem.config.ui.AppBarConfig
+import com.geekhaven.venuebookingsystem.models.data.Booking
 import com.geekhaven.venuebookingsystem.models.data.BookingRequest
 import com.geekhaven.venuebookingsystem.models.data.User
 import com.geekhaven.venuebookingsystem.models.data.toBookingRequest
 import com.geekhaven.venuebookingsystem.models.data.toUser
+import com.geekhaven.venuebookingsystem.models.type.VenueType
 import com.geekhaven.venuebookingsystem.repository.MainRepo
 import com.google.android.gms.auth.api.identity.SignInClient
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.launch
@@ -74,9 +77,18 @@ class MainVM(apiHandler: ApiHandler, mAuth: FirebaseAuth, val signInClient: Sign
     currentUserRequests.value = requestsResponse.map { it.toBookingRequest() }
   }
 
+  var selectedBuildingId: String? = null
+  var selectedUserId: String? = null
+  var selectedVenueId: String? = null
+  var selectedBookingId: String? = null
+  var selectedBookingRequestId: String? = null
+
+  var initiateBookingDetails: Booking? = null
+  var initiateBookingVenueType: VenueType? = null
+
   suspend fun loadUserDetails() {
     mainRepo.refreshToken()
-
+    delay(1000)
     updateCurrentUserDetails(mainRepo.getCurrentUserResponseDetails())
 
     firebaseRepo.getCurrentUserEmail()

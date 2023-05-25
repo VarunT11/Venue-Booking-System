@@ -12,6 +12,13 @@ sealed class BookingType {
     is BookingType.Event -> "EVENT"
     is BookingType.Other -> "OTHER"
   }
+
+  fun toDisplayString() = when(this) {
+    is BookingType.Academic -> "Academic"
+    is BookingType.Workshop -> "Workshop"
+    is BookingType.Event -> "Event"
+    is BookingType.Other -> "Other"
+  }
 }
 
 fun String.getBookingType() = when(this) {

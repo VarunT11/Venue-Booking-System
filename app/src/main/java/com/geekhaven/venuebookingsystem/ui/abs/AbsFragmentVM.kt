@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.geekhaven.venuebookingsystem.config.ui.AlertDialogConfig
+import com.geekhaven.venuebookingsystem.config.ui.DatePickerConfig
+import com.geekhaven.venuebookingsystem.config.ui.TimePickerConfig
 import com.geekhaven.venuebookingsystem.repository.ApiRepo
 import com.geekhaven.venuebookingsystem.repository.FirebaseRepo
 import com.geekhaven.venuebookingsystem.repository.MainRepo
@@ -37,10 +39,16 @@ abstract class AbsFragmentVM: ViewModel() {
   private val logFlow = MutableSharedFlow<String>()
 
   private lateinit var alertDialogConfig: MutableLiveData<AlertDialogConfig>
+  private lateinit var datePickerConfig: MutableLiveData<DatePickerConfig>
+  private lateinit var timePickerConfig: MutableLiveData<TimePickerConfig>
+
   private val alertDialogShowFlow = MutableSharedFlow<Unit>()
 
   fun startVM(mainVM: MainVM) {
     alertDialogConfig = MutableLiveData()
+    datePickerConfig = MutableLiveData()
+    timePickerConfig = MutableLiveData()
+
     setMainViewModel(mainVM)
     onFragmentStart()
   }
@@ -55,12 +63,18 @@ abstract class AbsFragmentVM: ViewModel() {
   fun getLogFlow(): Flow<String> = logFlow
   fun getExceptionFlow(): Flow<Throwable?> = coroutineHandler.getExceptionFlow()
   fun getAlertDialogConfig(): LiveData<AlertDialogConfig> = alertDialogConfig
+  fun getDatePickerConfig(): LiveData<DatePickerConfig> = datePickerConfig
+  fun getTimePickerConfig(): LiveData<TimePickerConfig> = timePickerConfig
+
   fun getAlertDialogShowFlow(): Flow<Unit> = alertDialogShowFlow
 
   protected fun sendNavAction(action: Int) { launchTask { navFlow.emit(action) } }
   protected fun sendLog(log: String) { launchTask { logFlow.emit(log) } }
   protected fun sendException(exception: Throwable?) { coroutineHandler.sendException(exception) }
   protected fun setAlertDialogConfig(config: AlertDialogConfig) { alertDialogConfig.value = config }
+  protected fun setDatePickerConfig(config: DatePickerConfig) { datePickerConfig.value = config }
+  protected fun setTimePickerConfig(config: TimePickerConfig) { timePickerConfig.value = config }
+
   protected fun showAlertDialog() { launchTask { alertDialogShowFlow.emit(Unit) } }
 
   fun <T> launchTask(task: suspend () -> T) =

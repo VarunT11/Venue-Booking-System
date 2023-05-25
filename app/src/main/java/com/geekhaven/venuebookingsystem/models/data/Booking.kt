@@ -9,11 +9,12 @@ import com.geekhaven.venuebookingsystem.utils.addMinuteToCalendarInstant
 import com.geekhaven.venuebookingsystem.utils.getCalendarFromInstant
 import com.geekhaven.venuebookingsystem.utils.toInstantString
 import java.util.Calendar
+import java.util.Collections.replaceAll
 
 data class Booking(
   val id: String?,
   val userId: String,
-  val venueId: String,
+  val venueId: String?,
   val bookingTime: Calendar?,
   val eventStartTime: Calendar,
   val lastUpdatedTime: Calendar?,
@@ -45,7 +46,7 @@ fun BookingResponse.toBooking() = Booking(
 fun Booking.toBookingResponse() = BookingResponse(
   id = id,
   userId = userId,
-  venueId = venueId,
+  venueId = venueId ?: "",
   bookingTime = bookingTime?.toInstantString(),
   eventTime = eventStartTime.toInstantString(),
   lastUpdatedTime = lastUpdatedTime?.toInstantString(),

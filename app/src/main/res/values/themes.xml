@@ -46,6 +46,17 @@
     <item name="iconTint">@null</item>
   </style>
 
+  <style name="ApproveButtonTheme" parent="FilledButtonTheme">
+    <item name="android:background">@drawable/background_approve_button</item>
+    <item name="backgroundTint">#53AB68</item>
+  </style>
+
+
+  <style name="RejectButtonTheme" parent="FilledButtonTheme">
+    <item name="android:background">@drawable/background_reject_button</item>
+    <item name="backgroundTint">#EB575A</item>
+  </style>
+
   <style name="FilledButtonTextAppearance" parent="FilledButtonTheme">
     <item name="fontFamily">@font/poppins_medium</item>
     <item name="android:textColor">@color/colorWhite</item>
@@ -69,6 +80,16 @@
     <item name="android:paddingEnd">0dp</item>
     <item name="android:paddingTop">36dp</item>
     <item name="android:paddingBottom">4dp</item>
+  </style>
+
+  <style name="TextInputAutocompleteTextStyle" parent="Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
+    <item name="android:textColorHint">#A3AFC7</item>
+    <item name="boxStrokeWidth">0.5dp</item>
+    <item name="boxStrokeColor">#E8E7EA</item>
+    <item name="hintAnimationEnabled">true</item>
+    <item name="hintEnabled">true</item>
+    <item name="hintTextAppearance">@style/HintTextAppearance</item>
+    <item name="endIconDrawable">@drawable/ic_dropdown</item>
   </style>
 
   <style name="HintTextAppearance" parent="Theme.VenueBookingSystem">

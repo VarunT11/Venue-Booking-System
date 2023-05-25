@@ -18,6 +18,15 @@ sealed class BookingRequestStatus {
     is Cancelled -> "CANCELLED"
     is AutomaticallyDeclined -> "AUTOMATICALLY_DECLINED"
   }
+
+  fun toDisplayString() = when(this) {
+    is PendingReceive -> "Receive Pending"
+    is Received -> "Received"
+    is Rejected -> "Rejected"
+    is Approved -> "Approved"
+    is Cancelled -> "Cancelled"
+    is AutomaticallyDeclined -> "Automatically Declined"
+  }
 }
 
 fun String.getBookingRequestStatus() = when(this) {

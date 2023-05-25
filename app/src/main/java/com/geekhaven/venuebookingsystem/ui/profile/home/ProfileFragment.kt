@@ -2,15 +2,13 @@ package com.geekhaven.venuebookingsystem.ui.profile.home
 
 import android.net.Uri
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.geekhaven.venuebookingsystem.adapter.ui.ProfileSettingsAdapter
 import com.geekhaven.venuebookingsystem.databinding.FragmentProfileBinding
 import com.geekhaven.venuebookingsystem.models.data.User
 import com.geekhaven.venuebookingsystem.ui.abs.AbsFragment
-import com.google.android.material.divider.MaterialDividerItemDecoration
+import com.geekhaven.venuebookingsystem.utils.getRolesText
 import com.squareup.picasso.Picasso
 
 class ProfileFragment : AbsFragment<FragmentProfileBinding, ProfileVM>() {
@@ -54,9 +52,7 @@ class ProfileFragment : AbsFragment<FragmentProfileBinding, ProfileVM>() {
   }
 
   private fun renderRoleDetails(user: User) {
-    if(!user.isAdmin && !user.isAuthority) binding.profileLayoutRoleDetails.visibility = View.GONE
-    else binding.profileLayoutRoleDetails.visibility = View.VISIBLE
-    binding.tvProfileRole.text = mVM.getRolesText(user.isAdmin, user.isAuthority)
+    binding.tvProfileRole.text = getRolesText(user.isAdmin, user.isAuthority)
   }
 
   override fun addViewListeners() {}

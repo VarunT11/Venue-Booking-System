@@ -19,6 +19,9 @@ import com.google.android.material.datepicker.CalendarConstraints
 import com.google.android.material.datepicker.DateValidatorPointForward
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
+import java.util.Calendar
 
 abstract class AbsFragment<VB : ViewBinding, VM: AbsFragmentVM> : Fragment() {
 
@@ -63,6 +66,8 @@ abstract class AbsFragment<VB : ViewBinding, VM: AbsFragmentVM> : Fragment() {
     launchInDefaultScope { LoggerHandler().invoke() }
     launchInDefaultScope { FragmentExceptionHandler().invoke() }
     launchInMainScope { AlertDialogHandler().invoke() }
+    launchInMainScope { DatePickerHandler().invoke() }
+    launchInMainScope { TimePickerHandler().invoke() }
 
     addLiveDataObservers()
     addViewListeners()
@@ -121,7 +126,6 @@ abstract class AbsFragment<VB : ViewBinding, VM: AbsFragmentVM> : Fragment() {
   }
 
   inner class AlertDialogHandler {
-
     suspend fun invoke() {
       val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext())
 
@@ -140,25 +144,53 @@ abstract class AbsFragment<VB : ViewBinding, VM: AbsFragmentVM> : Fragment() {
     }
   }
 
+  inner class DatePickerHandler {
+    suspend fun invoke() {
+      mVM.getDatePickerConfig().observe(viewLifecycleOwner) {
+        val calendarConstraints = CalendarConstraints.Builder()
+          .setValidator(DateValidatorPointForward.now())
+          .build()
+
+        val datePicker = MaterialDatePicker.Builder.datePicker()
+          .setTitleText(it.title)
+          .setCalendarConstraints(calendarConstraints)
+          .setSelection(it.defaultSelection)
+          .build()
+
+        datePicker.addOnPositiveButtonClickListener { long -> it.onSelect(long) }
+        datePicker.show(requireActivity().supportFragmentManager, "DatePicker")
+      }
+    }
+  }
+
+  inner class TimePickerHandler {
+    suspend fun invoke() {
+      mVM.getTimePickerConfig().observe(viewLifecycleOwner) {
+        val picker = MaterialTimePicker.Builder()
+          .setTimeFormat(TimeFormat.CLOCK_12H)
+          .setHour(it.hour)
+          .setMinute(it.minute)
+          .setTitleText(it.title)
+          .build()
+
+        picker.show(requireActivity().supportFragmentManager, "TimePicker")
+
+        picker.addOnPositiveButtonClickListener {_ ->
+          val calendar = Calendar.getInstance()
+            .apply {
+              set(Calendar.HOUR_OF_DAY, picker.hour)
+              set(Calendar.MINUTE, picker.minute)
+            }
+          it.onSelect(calendar)
+        }
+      }
+    }
+  }
+
   protected fun launchInDefaultScope(task: suspend () -> Unit) =
     mVM.launchTask(task)
 
   protected fun launchInMainScope(task: suspend () -> Unit) =
     mVM.launchTaskInMain(task)
-
-  protected fun showDatePicker(title: String, defaultSelection: Long, onSelect: (long: Long) -> Unit) {
-    val calendarConstraints = CalendarConstraints.Builder()
-      .setValidator(DateValidatorPointForward.now())
-      .build()
-
-    val datePicker = MaterialDatePicker.Builder.datePicker()
-      .setTitleText(title)
-      .setCalendarConstraints(calendarConstraints)
-      .setSelection(defaultSelection)
-      .build()
-
-    datePicker.show(requireActivity().supportFragmentManager, "DatePicker")
-    datePicker.addOnPositiveButtonClickListener { onSelect(it) }
-  }
 
 }

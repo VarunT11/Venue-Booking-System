@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.profile.manage.venues.view.details.VenueDetailsFragment">
+
+
+    <TextView
+        android:id="@+id/tvVenueDetailsNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Name:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsNameLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsNameLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsBuildingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Building:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsNameLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsBuilding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsBuildingLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsBuildingLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsBuildingLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsFloorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Floor:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsBuildingLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsFloor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsFloorLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsFloorLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsFloorLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsVenueTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Venue Type:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsFloorLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsVenueType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsVenueTypeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsVenueTypeLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsVenueTypeLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsAuthorityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Authority:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsVenueTypeLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsAuthority"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsAuthorityLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsAuthorityLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsAuthorityLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsCapacityLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Seating Capacity:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsAuthorityLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsCapacity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsCapacityLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsCapacityLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsCapacityLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsAccessibleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Is Accessible:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsCapacityLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsAccessible"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsAccessibleLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsAccessibleLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsAccessibleLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsAirConditionerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Air Conditioner:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsAccessibleLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsAirConditioner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsAirConditionerLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsAirConditionerLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsAirConditionerLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsProjectorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Has Projectors:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsAirConditionerLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsProjector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsProjectorLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsProjectorLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsProjectorLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsSpeakerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Has Speakers:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsProjectorLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsSpeaker"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsSpeakerLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsSpeakerLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsSpeakerLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsWhiteboardLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Has Whiteboard:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsSpeakerLabel" />
+
+    <TextView
+        android:id="@+id/tvVenueDetailsWhiteboard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvVenueDetailsWhiteboardLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvVenueDetailsWhiteboardLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvVenueDetailsWhiteboardLabel" />
+
+    <Button
+        android:id="@+id/btnVenueDetailsEdit"
+        style="@style/FilledButtonTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Edit Details"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnVenueDetailsRemove"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvVenueDetailsWhiteboardLabel" />
+
+    <Button
+        android:id="@+id/btnVenueDetailsRemove"
+        style="@style/FilledButtonTheme"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Remove Venue"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVenueDetailsEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnVenueDetailsEdit"
+        app:layout_constraintTop_toTopOf="@+id/btnVenueDetailsEdit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

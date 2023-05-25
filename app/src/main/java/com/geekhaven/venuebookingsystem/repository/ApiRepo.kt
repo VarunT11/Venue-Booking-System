@@ -20,6 +20,10 @@ class ApiRepo(private val apiHandler: ApiHandler) {
 
   // User related API Handing
 
+  suspend fun getAllUsers() =
+    apiHandler.getAllUsers(authToken)
+      .let { getResponse(it) { it.body()?.userResponses } }
+
   suspend fun getUserDetails(email: String) =
     apiHandler.getUserDetails(authToken, email)
       .let { getResponse(it) { it.body()?.userResponse } }
@@ -73,6 +77,10 @@ class ApiRepo(private val apiHandler: ApiHandler) {
 
 
   // Venue related API Handling
+
+  suspend fun getAllVenues() =
+    apiHandler.getAllVenues(authToken)
+      .let { getResponse(it) { it.body()?.venueResponseList } }
 
   suspend fun getVenuesByBuilding(buildingId: String) =
     apiHandler.getVenuesByBuilding(authToken, buildingId)

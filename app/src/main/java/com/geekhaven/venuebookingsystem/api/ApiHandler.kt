@@ -12,6 +12,9 @@ interface ApiHandler {
   @POST("users/login/")
   suspend fun loginUsingCredentials(@Body loginCredentials: LoginCredentials): Response<UserApiResponse>
 
+  @GET("users/details/all/")
+  suspend fun getAllUsers(@Header("Auth-Token") authToken: String): Response<UserListApiResponse>
+
   @GET("users/details/{email}/")
   suspend fun getUserDetails(@Header("Auth-Token") authToken: String, @Path(value = "email", encoded = true) email: String): Response<UserApiResponse>
 
@@ -53,6 +56,9 @@ interface ApiHandler {
 
   // Venue related API Requests
 
+  @GET("venues/details/all/")
+  suspend fun getAllVenues(@Header("Auth-Token") authToken: String): Response<VenueListApiResponse>
+
   @GET("venues/details/byBuilding/{building_id}/")
   suspend fun getVenuesByBuilding(@Header("Auth-Token") authToken: String, @Path(value="building_id", encoded = true) buildingId: String): Response<VenueListApiResponse>
 
@@ -90,7 +96,7 @@ interface ApiHandler {
   @GET("bookings/details/{booking_id}/")
   suspend fun getBooking(@Header("Auth-Token") authToken: String, @Path(value = "booking_id", encoded = true) bookingId: String): Response<BookingApiResponse>
 
-  @GET("bookings/bookingRequests/{booking_id}")
+  @GET("bookings/bookingRequests/byBooking/{booking_id}")
   suspend fun getBookingRequestsByBooking(@Header("Auth-Token") authToken: String, @Path(value = "booking_id", encoded = true) bookingId: String): Response<BookingRequestListApiResponse>
 
   @GET("bookings/bookingRequests/byReceiver/{receiver_id}")

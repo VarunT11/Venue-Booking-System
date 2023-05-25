@@ -1,287 +1,398 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/colorBackground"
-  android:scrollbars="vertical"
-  tools:context=".ui.profile.manage.venues.add.AddVenueFragment">
-
-  <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:scrollbars="vertical"
+    tools:context=".ui.profile.manage.venues.add.AddVenueFragment">
 
-    <ImageView
-      android:id="@+id/graphicsAddVenue"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="16dp"
-      android:src="@drawable/graphics_add_venue"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/inputAddVenueName"
-      style="@style/TextInputStyle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="40dp"
-      android:hint="Name"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/graphicsAddVenue">
-
-      <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputTextStyle"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/graphicsAddVenue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/graphics_add_venue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/inputAddVenueBuilding"
-      style="@style/TextInputStyle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="40dp"
-      android:hint="Building"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/inputAddVenueName">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddVenueName"
+            style="@style/TextInputStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/graphicsAddVenue">
 
-      <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/TextInputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/inputAddVenueFloor"
-      style="@style/TextInputStyle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="40dp"
-      android:hint="Floor"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/inputAddVenueBuilding">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddVenueBuilding"
+            style="@style/TextInputAutocompleteTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Building"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputAddVenueName">
 
-      <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                style="@style/TextInputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/inputAddVenueType"
-      style="@style/TextInputStyle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="40dp"
-      android:hint="Type of Venue"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/inputAddVenueFloor">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddVenueFloor"
+            style="@style/TextInputStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Floor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputAddVenueBuilding">
 
-      <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/TextInputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/inputAddVenueAuthority"
-      style="@style/TextInputStyle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="40dp"
-      android:hint="Authority"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/inputAddVenueType">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddVenueType"
+            style="@style/TextInputAutocompleteTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Type of Venue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputAddVenueFloor">
 
-      <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                style="@style/TextInputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-      android:id="@+id/inputAddVenueCapacity"
-      style="@style/TextInputStyle"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="40dp"
-      android:hint="Seating Capacity"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/inputAddVenueAuthority">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddVenueAuthority"
+            style="@style/TextInputAutocompleteTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Authority"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputAddVenueType">
 
-      <com.google.android.material.textfield.TextInputEditText
-        style="@style/TextInputTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                style="@style/TextInputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="none"/>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-      android:id="@+id/inputAddVenueIsAccessibleLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_medium"
-      android:text="Is Accessible:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddVenueIsAccessibleSwitch"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddVenueCapacity" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputAddVenueCapacity"
+            style="@style/TextInputStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="40dp"
+            android:hint="Seating Capacity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputAddVenueAuthority">
 
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddVenueIsAccessibleSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="40dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueIsAccessibleLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddVenueIsAccessibleLabel" />
+            <com.google.android.material.textfield.TextInputEditText
+                style="@style/TextInputTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"/>
 
-    <TextView
-      android:id="@+id/inputAddVenueAirConditionerLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_medium"
-      android:text="Has Air Conditioner:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddVenueAirConditionerSwitch"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddVenueIsAccessibleLabel" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddVenueAirConditionerSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="40dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueAirConditionerLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddVenueAirConditionerLabel" />
+        <TextView
+            android:id="@+id/inputAddVenueIsAccessibleLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Is Accessible:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddVenueIsAccessibleSwitch"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddVenueCapacity" />
 
-    <TextView
-      android:id="@+id/inputAddVenueProjectorLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_medium"
-      android:text="Has Projector:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddVenueProjectorSwitch"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddVenueAirConditionerLabel" />
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddVenueIsAccessibleSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            app:checkedButton="@id/btnAddVenueIsAccessibleNo"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueIsAccessibleLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddVenueIsAccessibleLabel"
+            app:selectionRequired="true"
+            app:singleSelection="true">
 
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddVenueProjectorSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="40dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueProjectorLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddVenueProjectorLabel" />
+            <Button
+                android:id="@+id/btnAddVenueIsAccessibleYes"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="10sp" />
 
-    <TextView
-      android:id="@+id/inputAddVenueSpeakersLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_medium"
-      android:text="Has Speakers:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddVenueSpeakersSwitch"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddVenueProjectorLabel" />
+            <Button
+                android:id="@+id/btnAddVenueIsAccessibleNo"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="10sp" />
 
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddVenueSpeakersSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="40dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueSpeakersLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddVenueSpeakersLabel" />
+        </com.google.android.material.button.MaterialButtonToggleGroup>
 
-    <TextView
-      android:id="@+id/inputAddVenueWhiteboardLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_medium"
-      android:text="Has Whiteboard:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddVenueWhiteboardSwitch"
-      app:layout_constraintHorizontal_bias="0.0"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddVenueSpeakersLabel" />
+        <TextView
+            android:id="@+id/inputAddVenueAirConditionerLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Has Air Conditioner:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddVenueAirConditionerSwitch"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddVenueIsAccessibleLabel" />
 
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddVenueWhiteboardSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="40dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueWhiteboardLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddVenueWhiteboardLabel" />
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddVenueAirConditionerSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            app:checkedButton="@id/btnAddVenueHasAirConditionerNo"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueAirConditionerLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddVenueAirConditionerLabel">
 
-    <Button
-      android:id="@+id/btnAddVenueSubmit"
-      style="@style/FilledButtonTheme"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="48dp"
-      android:layout_marginTop="32dp"
-      android:layout_marginEnd="48dp"
-      android:layout_marginBottom="32dp"
-      android:text="Add Venue"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddVenueWhiteboardLabel" />
+          <Button
+              android:id="@+id/btnAddVenueHasAirConditionerYes"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Yes"
+              android:textSize="10sp" />
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+          <Button
+              android:id="@+id/btnAddVenueHasAirConditionerNo"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="No"
+              android:textSize="10sp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:id="@+id/inputAddVenueProjectorLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Has Projector:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddVenueProjectorSwitch"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddVenueAirConditionerLabel" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddVenueProjectorSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            app:checkedButton="@id/btnAddVenueHasProjectorNo"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueProjectorLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddVenueProjectorLabel">
+
+          <Button
+              android:id="@+id/btnAddVenueHasProjectorYes"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Yes"
+              android:textSize="10sp" />
+
+          <Button
+              android:id="@+id/btnAddVenueHasProjectorNo"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="No"
+              android:textSize="10sp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:id="@+id/inputAddVenueSpeakersLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Has Speakers:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddVenueSpeakersSwitch"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddVenueProjectorLabel" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddVenueSpeakersSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            app:checkedButton="@id/btnAddVenueHasSpeakersNo"
+            app:selectionRequired="true"
+            app:singleSelection="true"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueSpeakersLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddVenueSpeakersLabel">
+
+          <Button
+              android:id="@+id/btnAddVenueHasSpeakersYes"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Yes"
+              android:textSize="10sp" />
+
+          <Button
+              android:id="@+id/btnAddVenueHasSpeakersNo"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="No"
+              android:textSize="10sp" />
+
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:id="@+id/inputAddVenueWhiteboardLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Has Whiteboard:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddVenueWhiteboardSwitch"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddVenueSpeakersLabel" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddVenueWhiteboardSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@id/btnAddVenueHasWhiteboardNo"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddVenueWhiteboardLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddVenueWhiteboardLabel">
+
+          <Button
+              android:id="@+id/btnAddVenueHasWhiteboardYes"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Yes"
+              android:textSize="10sp" />
+
+          <Button
+              android:id="@+id/btnAddVenueHasWhiteboardNo"
+              style="@style/Widget.Material3.Button.OutlinedButton"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="No"
+              android:textSize="10sp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <Button
+            android:id="@+id/btnAddVenueSubmit"
+            style="@style/FilledButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="32dp"
+            android:text="Add Venue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddVenueWhiteboardLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

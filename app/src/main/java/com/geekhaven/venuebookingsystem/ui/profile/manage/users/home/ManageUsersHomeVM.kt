@@ -25,9 +25,6 @@ class ManageUsersHomeVM: AbsFragmentVM() {
       titleBarConfig = TitleBarConfig(
         showBackButton = false,
         title = "Manage Users",
-      ),
-      searchBarConfig = SearchBarConfig(
-        hint = "Search Users",
       )
     ))
 

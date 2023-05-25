@@ -4,80 +4,167 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+    android:background="@color/colorBackground"
   tools:context=".ui.bookings.BookingHomeFragment">
 
   <TextView
-    android:id="@+id/tvBookingHomeEventVenue"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="24dp"
-    android:layout_marginEnd="16dp"
-    android:text="TextView"
-    android:textAlignment="center"
-    app:layout_constraintEnd_toStartOf="@+id/tvBookingHomeEventDate"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+      android:id="@+id/tvBookingHomeTitle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginEnd="8dp"
+      android:fontFamily="@font/poppins_semibold"
+      android:text="TextView"
+      android:textColor="#313465"
+      android:textSize="24sp"
+      app:layout_constraintBottom_toBottomOf="@+id/mcvBookingHomeStatus"
+      app:layout_constraintEnd_toStartOf="@+id/mcvBookingHomeStatus"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/mcvBookingHomeStatus" />
+
+  <com.google.android.material.card.MaterialCardView
+      android:id="@+id/mcvBookingHomeStatus"
+      style="@style/CardTheme"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="24dp"
+      app:strokeWidth="1dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/tvBookingHomeStatus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Hello World"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:textSize="12sp" />
+
+  </com.google.android.material.card.MaterialCardView>
 
   <TextView
-    android:id="@+id/tvBookingHomeEventDate"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="24dp"
-    android:text="TextView"
-    android:textAlignment="center"
-    app:layout_constraintBottom_toBottomOf="@+id/tvBookingHomeEventVenue"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@+id/tvBookingHomeEventVenue"
-    app:layout_constraintTop_toTopOf="@+id/tvBookingHomeEventVenue" />
+      android:id="@+id/tvBookingHomeDate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="16dp"
+      android:drawablePadding="8dp"
+      android:fontFamily="@font/poppins_medium"
+      android:text="TextView"
+      android:textColor="#9BA0AE"
+      android:textSize="14sp"
+      app:drawableStartCompat="@drawable/ic_calendar"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeTitle" />
 
   <TextView
-    android:id="@+id/tvBookingHomeDuration"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="24dp"
-    android:text="TextView"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeEventVenue" />
+      android:id="@+id/tvBookingHomeTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="24dp"
+      android:drawablePadding="8dp"
+      android:fontFamily="@font/poppins_medium"
+      android:text="TextView"
+      android:textColor="#9BA0AE"
+      android:textSize="14sp"
+      app:drawableStartCompat="@drawable/ic_clock"
+      app:layout_constraintBottom_toBottomOf="@+id/tvBookingHomeDate"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvBookingHomeDate" />
 
   <TextView
-    android:id="@+id/tvBookingHomeDescription"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="24dp"
-    android:text="TextView"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeDuration" />
+      android:id="@+id/tvBookingHomeLocation"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="8dp"
+      android:drawablePadding="8dp"
+      android:fontFamily="@font/poppins_medium"
+      android:text="TextView"
+      android:textColor="#9BA0AE"
+      android:textSize="14sp"
+      app:drawableStartCompat="@drawable/ic_location"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeDate" />
 
   <TextView
-    android:id="@+id/tvBookingHomeExpectedStrength"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginEnd="24dp"
-    android:text="TextView"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeDescription" />
+      android:id="@+id/tvBookingHomeDescription"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="24dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#313465"
+      android:textSize="14sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeLocation" />
+
+  <TextView
+      android:id="@+id/tvBookingHomeExpectedStrength"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="8dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#313465"
+      android:textSize="16sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeDescription" />
+
+  <TextView
+      android:id="@+id/tvBookingHomeBookingTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="16dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#9BA0AE"
+      android:textSize="11sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeExpectedStrength" />
+
+  <TextView
+      android:id="@+id/tvBookingHomeLastUpdatedTime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="8dp"
+      android:fontFamily="@font/poppins_regular"
+      android:text="TextView"
+      android:textColor="#9BA0AE"
+      android:textSize="11sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeBookingTime" />
+
+  <TextView
+      android:id="@+id/tvBookingHomeRequestStatusLabel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:fontFamily="@font/poppins_semibold"
+      android:text="Request Status"
+      android:textColor="#313465"
+      android:textSize="16sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeLastUpdatedTime" />
 
   <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rcvBookingHomeRequestsList"
-    android:layout_width="0dp"
-    android:layout_height="0dp"
-    android:layout_marginStart="24dp"
-    android:layout_marginTop="24dp"
-    android:layout_marginEnd="24dp"
-    android:layout_marginBottom="24dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeExpectedStrength" />
+      android:id="@+id/rcvBookingHomeRequestStatus"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="24dp"
+      android:layout_marginBottom="24dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvBookingHomeRequestStatusLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

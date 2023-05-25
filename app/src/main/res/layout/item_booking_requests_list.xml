@@ -1,70 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:layout_margin="8dp"
-  app:cardBackgroundColor="@color/white">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/CardTheme"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardBackgroundColor="#313465">
 
   <androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <TextView
-      android:id="@+id/tvItemBookingRequestsVenue"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="24dp"
-      android:layout_marginTop="24dp"
-      android:layout_marginEnd="8dp"
-      android:text="TextView"
-      android:textAlignment="center"
-      app:layout_constraintEnd_toStartOf="@+id/tvItemBookingRequestsDate"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
 
     <TextView
-      android:id="@+id/tvItemBookingRequestsDate"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginEnd="24dp"
-      android:text="TextView"
-      android:textAlignment="center"
-      app:layout_constraintBottom_toBottomOf="@+id/tvItemBookingRequestsVenue"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/tvItemBookingRequestsVenue"
-      app:layout_constraintTop_toTopOf="@+id/tvItemBookingRequestsVenue" />
+        android:id="@+id/tvBookingRequestListItemTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="TextView"
+        android:textColor="#F8F8F8"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/mcvBookingRequestListItemStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-      android:id="@+id/tvItemBookingRequestsUser"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="24dp"
-      android:layout_marginTop="16dp"
-      android:layout_marginEnd="8dp"
-      android:layout_marginBottom="24dp"
-      android:text="TextView"
-      android:textAlignment="center"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toStartOf="@+id/tvItemBookingRequestsStatus"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tvItemBookingRequestsVenue" />
+        android:id="@+id/tvBookingRequestListItemType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#F8F8F8"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingRequestListItemTitle" />
 
     <TextView
-      android:id="@+id/tvItemBookingRequestsStatus"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginEnd="24dp"
-      android:text="TextView"
-      android:textAlignment="center"
-      app:layout_constraintBottom_toBottomOf="@+id/tvItemBookingRequestsUser"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/tvItemBookingRequestsUser"
-      app:layout_constraintTop_toTopOf="@+id/tvItemBookingRequestsUser" />
+        android:id="@+id/tvBookingRequestListItemLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#C6CCDB"
+        android:textSize="12sp"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingRequestListItemType" />
+
+    <TextView
+        android:id="@+id/tvBookingRequestListItemTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#C6CCDB"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingRequestListItemLocation" />
+
+    <TextView
+        android:id="@+id/tvBookingRequestListItemUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="TextView"
+        android:textColor="#F8FAFB"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBookingRequestListItemTime" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mcvBookingRequestListItemStatus"
+        style="@style/CardTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+          android:id="@+id/tvBookingRequestListItemStatus"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:fontFamily="@font/poppins_semibold"
+          android:text="Hello World"
+          android:textSize="12sp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
   </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

@@ -1,213 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:background="@color/colorBackground"
-  tools:context=".ui.profile.manage.users.add.AddUsersFragment"
-  android:orientation="vertical">
-
-  <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-      android:id="@+id/graphicsAddUser"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="16dp"
-      android:layout_marginEnd="16dp"
-      android:src="@drawable/graphics_add_user"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical"
+    tools:context=".ui.profile.manage.users.add.AddUsersFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/inputAddUserEmailLayout"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="32dp"
-      android:layout_marginTop="24dp"
-      android:layout_marginEnd="32dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintHorizontal_bias="0.573"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/graphicsAddUser">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-      <ImageView
-        android:id="@+id/inputAddUserEmailIcon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_add_email"
-        app:layout_constraintBottom_toBottomOf="@+id/inputAddUserEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputAddUserEmail" />
+        <ImageView
+            android:id="@+id/graphicsAddUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/graphics_add_user"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-      <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputAddUserEmail"
-        style="@style/TextInputStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:hint="Email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inputAddUserEmailIcon"
-        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inputAddUserEmailLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.573"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/graphicsAddUser">
 
-        <com.google.android.material.textfield.TextInputEditText
-          style="@style/TextInputTextStyle"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent" />
+            <ImageView
+                android:id="@+id/inputAddUserEmailIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add_email"
+                app:layout_constraintBottom_toBottomOf="@+id/inputAddUserEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/inputAddUserEmail" />
 
-      </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputAddUserEmail"
+                style="@style/TextInputStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:hint="Email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/inputAddUserEmailIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextInputTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inputAddUserNameLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddUserEmailLayout">
+
+            <ImageView
+                android:id="@+id/inputAddUserNameIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_profile_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/inputAddUserName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/inputAddUserName" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputAddUserName"
+                style="@style/TextInputStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:hint="Name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/inputAddUserNameIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextInputTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inputAddUserAuthorityLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddUserNameLayout">
+
+            <ImageView
+                android:id="@+id/inputAddUserAuthorityIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add_email"
+                app:layout_constraintBottom_toBottomOf="@+id/inputAddUserAuthority"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/inputAddUserAuthority" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputAddUserAuthority"
+                style="@style/TextInputStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:hint="Higher Authority Email"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/inputAddUserAuthorityIcon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextInputTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/inputAddUserParentPermissionRequiredLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Require Parent Permission:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddUserParentPermissionRequiredSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddUserAuthorityLayout" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddUserParentPermissionRequiredSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="32dp"
+            app:checkedButton="@id/btnAddUserRequireParentPermissionNo"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddUserParentPermissionRequiredLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddUserParentPermissionRequiredLabel"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/btnAddUserRequireParentPermissionYes"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnAddUserRequireParentPermissionNo"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="10sp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <TextView
+            android:id="@+id/inputAddUserIsAdminLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Is Admin:"
+            android:textColor="#313465"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/inputAddUserIsAdminSwitch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddUserParentPermissionRequiredLabel" />
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/inputAddUserIsAdminSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            app:checkedButton="@id/btnAddUserIsAdminNo"
+            app:layout_constraintBottom_toBottomOf="@+id/inputAddUserIsAdminLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/inputAddUserIsAdminLabel"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <Button
+                android:id="@+id/btnAddUserIsAdminYes"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnAddUserIsAdminNo"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="10sp" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <Button
+            android:id="@+id/btnAddUserSubmit"
+            style="@style/FilledButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="40dp"
+            android:text="Add User"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputAddUserIsAdminLabel" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/inputAddUserNameLayout"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="32dp"
-      android:layout_marginTop="8dp"
-      android:layout_marginEnd="32dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddUserEmailLayout">
-
-      <ImageView
-        android:id="@+id/inputAddUserNameIcon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_profile_grey"
-        app:layout_constraintBottom_toBottomOf="@+id/inputAddUserName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputAddUserName" />
-
-      <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputAddUserName"
-        style="@style/TextInputStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:hint="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inputAddUserNameIcon"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-          style="@style/TextInputTextStyle"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent" />
-
-      </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-      android:id="@+id/inputAddUserAuthorityLayout"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="32dp"
-      android:layout_marginTop="8dp"
-      android:layout_marginEnd="32dp"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddUserNameLayout">
-
-      <ImageView
-        android:id="@+id/inputAddUserAuthorityIcon"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:src="@drawable/ic_add_email"
-        app:layout_constraintBottom_toBottomOf="@+id/inputAddUserAuthority"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inputAddUserAuthority" />
-
-      <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputAddUserAuthority"
-        style="@style/TextInputStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:hint="Higher Authority Email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/inputAddUserAuthorityIcon"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-          style="@style/TextInputTextStyle"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent" />
-
-      </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <TextView
-      android:id="@+id/inputAddUserParentPermissionRequiredLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="32dp"
-      android:layout_marginTop="24dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_regular"
-      android:text="Require Parent Permission:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddUserParentPermissionRequiredSwitch"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddUserAuthorityLayout" />
-
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddUserParentPermissionRequiredSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="32dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddUserParentPermissionRequiredLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddUserParentPermissionRequiredLabel" />
-
-    <TextView
-      android:id="@+id/inputAddUserIsAdminLabel"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="32dp"
-      android:layout_marginTop="24dp"
-      android:layout_marginEnd="16dp"
-      android:fontFamily="@font/poppins_regular"
-      android:text="Is Admin:"
-      android:textColor="#313465"
-      android:textSize="16sp"
-      app:layout_constraintEnd_toStartOf="@+id/inputAddUserIsAdminSwitch"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddUserParentPermissionRequiredLabel" />
-
-    <com.google.android.material.materialswitch.MaterialSwitch
-      android:id="@+id/inputAddUserIsAdminSwitch"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginEnd="32dp"
-      app:layout_constraintBottom_toBottomOf="@+id/inputAddUserIsAdminLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/inputAddUserIsAdminLabel" />
-
-    <Button
-      android:id="@+id/btnAddUserSubmit"
-      style="@style/FilledButtonTheme"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="40dp"
-      android:layout_marginTop="48dp"
-      android:layout_marginEnd="40dp"
-      android:text="Add User"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/inputAddUserIsAdminLabel" />
-
-  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

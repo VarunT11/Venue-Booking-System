@@ -4,73 +4,83 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:layout_margin="4dp"
-  app:cardElevation="4dp"
-  app:contentPadding="8dp">
+    style="@style/CardTheme"
+  android:layout_marginBottom="12dp">
 
   <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-      android:id="@+id/tvVenueListItemName"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="8dp"
-      android:layout_marginEnd="8dp"
-      android:text="TextView"
-      android:textSize="18sp"
-      android:textStyle="bold"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/venueListItemNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Name:"
+        android:textColor="#0B0C24"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-      android:id="@+id/tvVenueItemListFloorLabel"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="8dp"
-      android:text="Floor:"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tvVenueListItemName" />
+        android:id="@+id/venueListItemName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC5"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/venueListItemNameLabel"
+        app:layout_constraintEnd_toStartOf="@+id/btnVenueListItemEdit"
+        app:layout_constraintStart_toEndOf="@+id/venueListItemNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/venueListItemNameLabel" />
 
     <TextView
-      android:id="@+id/tvVenueItemListFloor"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginEnd="8dp"
-      android:text="TextView"
-      app:layout_constraintBottom_toBottomOf="@+id/tvVenueItemListFloorLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/tvVenueItemListFloorLabel"
-      app:layout_constraintTop_toTopOf="@+id/tvVenueItemListFloorLabel" />
+        android:id="@+id/venueListItemBuildingLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Building:"
+        android:textColor="#0B0C24"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/venueListItemNameLabel" />
 
     <TextView
-      android:id="@+id/tvVenueItemListCapacityLabel"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginTop="4dp"
-      android:layout_marginBottom="8dp"
-      android:text="Capacity:"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/tvVenueItemListFloorLabel" />
+        android:id="@+id/venueListItemBuilding"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC5"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/venueListItemBuildingLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/venueListItemBuildingLabel"
+        app:layout_constraintTop_toTopOf="@+id/venueListItemBuildingLabel" />
 
-    <TextView
-      android:id="@+id/tvVenueItemListCapacity"
-      android:layout_width="0dp"
-      android:layout_height="wrap_content"
-      android:layout_marginStart="8dp"
-      android:layout_marginEnd="8dp"
-      android:text="TextView"
-      app:layout_constraintBottom_toBottomOf="@+id/tvVenueItemListCapacityLabel"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@+id/tvVenueItemListCapacityLabel"
-      app:layout_constraintTop_toTopOf="@+id/tvVenueItemListCapacityLabel" />
+    <ImageButton
+        android:id="@+id/btnVenueListItemEdit"
+        android:layout_width="16.25dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/venueListItemName"
+        app:layout_constraintEnd_toStartOf="@+id/btnVenueListItemRemove"
+        app:layout_constraintTop_toTopOf="@+id/venueListItemName" />
+
+    <ImageButton
+        android:id="@+id/btnVenueListItemRemove"
+        android:layout_width="11.25dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="@+id/btnVenueListItemEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnVenueListItemEdit" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 

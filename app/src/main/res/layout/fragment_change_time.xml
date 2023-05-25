@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.home.change_time.ChangeTimeFragment">
+
+
+    <TextView
+        android:id="@+id/tvChangeTimeVenueName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvChangeTimeBuildingName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="TextView"
+        android:textColor="#9BA0AE"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChangeTimeVenueName" />
+
+    <TextView
+        android:id="@+id/tvChangeTimeVenueType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="TextView"
+        android:textColor="#9BA0AE"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChangeTimeVenueName" />
+
+    <TextView
+        android:id="@+id/tvChangeTimeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChangeTimeBuildingName" />
+
+    <Button
+        android:id="@+id/btnChangeTime"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Time"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnChangeTimeChangeDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnChangeTimeChangeDate"
+        app:layout_constraintTop_toTopOf="@+id/btnChangeTimeChangeDate" />
+
+    <com.alamkanak.weekview.WeekView
+        android:id="@+id/wvChangeTimeCalendar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        app:headerTextSize="0sp"
+        app:hourHeight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChangeTimeChangeDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvChangeTimeDate"
+        app:layout_constraintVertical_bias="1.0"
+        app:numberOfVisibleDays="1"
+        app:showHourSeparator="true"
+        app:showTimeColumnHourSeparator="false"
+        app:showTimeColumnSeparator="false"
+        app:timeColumnHoursInterval="2"
+        app:timeColumnTextSize="14sp"
+        app:dayBackgroundColor="@color/colorBackground" />
+
+    <Button
+        android:id="@+id/btnChangeTimeChangeDate"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Change Date"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnChangeTimeSaveChanges"
+        app:layout_constraintEnd_toStartOf="@+id/btnChangeTime"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnChangeTimeSaveChanges"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Save Changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

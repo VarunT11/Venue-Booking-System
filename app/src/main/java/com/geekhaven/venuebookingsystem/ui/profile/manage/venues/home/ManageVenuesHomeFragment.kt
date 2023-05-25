@@ -20,30 +20,19 @@ class ManageVenuesHomeFragment : AbsFragment<FragmentManageVenuesHomeBinding, Ma
     FragmentManageVenuesHomeBinding.inflate(inflater, container, false)
 
   override fun addLiveDataObservers() {
+    mVM.getOptionsList().observe(viewLifecycleOwner) { renderOptionsList(it) }
   }
 
   override fun addViewListeners() {
-    createOptionsList()
+
   }
 
-  private fun createOptionsList(){
+  private fun renderOptionsList(options: ArrayList<ManageOptionItem>){
     LinearLayoutManager(requireContext())
       .apply { orientation = GridLayoutManager.VERTICAL }
       .also { binding.rcvManageVenuesOptions.layoutManager = it }
 
-    ManageOptionAdapter(requireContext(), getOptionsList()) { handleOptionSelected(it) }
+    ManageOptionAdapter(requireContext(), options) { mVM.handleOptionSelected(it) }
       .also { binding.rcvManageVenuesOptions.adapter = it }
-  }
-
-  private fun getOptionsList(): ArrayList<ManageOptionItem> = ArrayList(
-    listOf(
-      ManageOptionItem(ManageOptionType.Add, "Add a new Venue"),
-      ManageOptionItem(ManageOptionType.View, "View Venues List"),
-    )
-  )
-
-  private fun handleOptionSelected(optionType: ManageOptionType) = when(optionType){
-    is ManageOptionType.Add -> {  }
-    is ManageOptionType.View -> {  }
   }
 }

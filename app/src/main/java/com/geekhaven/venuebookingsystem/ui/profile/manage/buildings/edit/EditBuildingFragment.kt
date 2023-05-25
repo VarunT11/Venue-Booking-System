@@ -15,7 +15,25 @@ class EditBuildingFragment: AbsFragment<FragmentAddBuildingBinding, EditBuilding
   override fun inflateViewBinding(inflater: LayoutInflater, container: ViewGroup?) =
     FragmentAddBuildingBinding.inflate(inflater, container, false)
 
-  override fun addLiveDataObservers() {}
+  override fun addLiveDataObservers() {
+    mVM.getBuilding().observe(viewLifecycleOwner) {building ->
+      building?.name.let { binding.inputAddBuildingName.editText?.setText(it) }
+    }
 
-  override fun addViewListeners() {}
+    mVM.getInputNameError().observe(viewLifecycleOwner) {
+      binding.inputAddBuildingName.error = it
+    }
+  }
+
+  override fun addViewListeners() {
+    binding.btnAddBuildingSubmit
+      .also { it.text = "Edit Details" }
+      .setOnClickListener {
+      mVM.maybeUpdateBuilding(getInputName())
+    }
+
+    binding.inputAddBuildingName.editText?.addTextChangedListener { mVM.handleInputNameChanged() }
+  }
+
+  private fun getInputName() = binding.inputAddBuildingName.editText?.text.toString()
 }

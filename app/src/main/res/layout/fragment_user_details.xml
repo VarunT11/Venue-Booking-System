@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.profile.manage.users.view.details.UserDetailsFragment">
+
+
+    <TextView
+        android:id="@+id/tvUserDetailsNameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Name:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserDetailsNameLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvUserDetailsNameLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvUserDetailsNameLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsEmailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Email:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserDetailsNameLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserDetailsEmailLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvUserDetailsEmailLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvUserDetailsEmailLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsParentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Parent Authority Email:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserDetailsEmailLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsParent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserDetailsParentLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvUserDetailsParentLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvUserDetailsParentLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsPermissionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Require Parent Permission? :"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserDetailsParentLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsPermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserDetailsPermissionLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvUserDetailsPermissionLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvUserDetailsPermissionLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsAdminLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Is Admin? :"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserDetailsPermissionLabel" />
+
+    <TextView
+        android:id="@+id/tvUserDetailsAdmin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#A3AFC6"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUserDetailsAdminLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvUserDetailsAdminLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvUserDetailsAdminLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnUserDetailsEdit"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Edit Details"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnUserDetailsRemove"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserDetailsAdminLabel" />
+
+    <Button
+        android:id="@+id/btnUserDetailsRemove"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Remove User"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnUserDetailsEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnUserDetailsEdit"
+        app:layout_constraintTop_toTopOf="@+id/btnUserDetailsEdit" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,6 +14,14 @@ sealed class VenueType {
     is Auditorium -> "AUDITORIUM"
     is Other -> "OTHER"
   }
+
+  fun toDisplayString() = when(this) {
+    is Classroom -> "Classroom"
+    is Lab -> "Lab"
+    is MeetingRoom -> "Meeting Room"
+    is Auditorium -> "Auditorium"
+    is Other -> "Other"
+  }
 }
 
 fun String.getVenueType() = when (this) {

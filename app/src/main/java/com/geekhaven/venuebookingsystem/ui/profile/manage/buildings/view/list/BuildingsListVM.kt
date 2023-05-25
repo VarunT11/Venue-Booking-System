@@ -2,12 +2,15 @@ package com.geekhaven.venuebookingsystem.ui.profile.manage.buildings.view.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.geekhaven.venuebookingsystem.R
 import com.geekhaven.venuebookingsystem.api.models.BuildingResponse
+import com.geekhaven.venuebookingsystem.config.ui.AlertDialogConfig
 import com.geekhaven.venuebookingsystem.config.ui.AppBarConfig
 import com.geekhaven.venuebookingsystem.config.ui.SearchBarConfig
 import com.geekhaven.venuebookingsystem.config.ui.TitleBarConfig
 import com.geekhaven.venuebookingsystem.models.data.Building
 import com.geekhaven.venuebookingsystem.models.data.toBuilding
+import com.geekhaven.venuebookingsystem.models.data.toBuildingResponse
 import com.geekhaven.venuebookingsystem.ui.abs.AbsFragmentVM
 
 class BuildingsListVM: AbsFragmentVM() {
@@ -32,14 +35,18 @@ class BuildingsListVM: AbsFragmentVM() {
       )
     ))
 
-    launchCatchingTaskWithLoader(
-      task = { apiRepo.getAllBuildings() },
-      success = { handleListLoaded(it) }
-    )
+    loadBuildingsList()
 
     launchTask {
       mainVM.getSearchTextFlow().collect { updateBuildingsBySearch(it) }
     }
+  }
+
+  private fun loadBuildingsList(){
+    launchCatchingTaskWithLoader(
+      task = { apiRepo.getAllBuildings() },
+      success = { handleListLoaded(it) }
+    )
   }
 
   private fun handleListLoaded(responses: List<BuildingResponse>?){
@@ -54,15 +61,30 @@ class BuildingsListVM: AbsFragmentVM() {
   }
 
   fun handleBuildingSelect(id: String){
-
+    mainVM.selectedBuildingId = id
+    sendNavAction(R.id.action_buildingsListFragment_to_viewBuildingFragment)
   }
 
   fun handleBuildingEditSelect(id: String) {
-
+    mainVM.selectedBuildingId = id
+    sendNavAction(R.id.action_buildingsListFragment_to_editBuildingFragment)
   }
 
   fun handleBuildingRemoveSelect(id: String) {
+    val building = buildingsList.filter { it.id == id }[0]
+    setAlertDialogConfig(AlertDialogConfig(
+      title = "Venue Booking System",
+      message = "Are you sure you want to delete ${building.name}",
+      onYes = { removeBuilding(building) }
+    ))
+    showAlertDialog()
+  }
 
+  private fun removeBuilding(building: Building) {
+    launchCatchingTaskWithLoader(
+      task = { apiRepo.removeBuilding(building.toBuildingResponse()) },
+      success = { loadBuildingsList() }
+    )
   }
 
 }

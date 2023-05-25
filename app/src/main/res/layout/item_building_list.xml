@@ -39,25 +39,23 @@
       app:layout_constraintTop_toTopOf="@+id/buildingListItemNameLabel" />
 
     <ImageButton
-      android:id="@+id/btnBuildingListItemEdit"
-      android:layout_width="16dp"
-      android:layout_height="16dp"
-      android:layout_marginEnd="12dp"
-      android:background="@android:color/transparent"
-      app:layout_constraintBottom_toBottomOf="@+id/buildingListItemName"
-      app:layout_constraintEnd_toStartOf="@+id/btnBuildingListItemRemove"
-      app:layout_constraintTop_toTopOf="@+id/buildingListItemName"
-      app:srcCompat="@drawable/ic_edit" />
+        android:id="@+id/btnBuildingListItemEdit"
+        android:layout_width="16.25dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/ic_edit"
+        app:layout_constraintBottom_toBottomOf="@+id/buildingListItemName"
+        app:layout_constraintEnd_toStartOf="@+id/btnBuildingListItemRemove"
+        app:layout_constraintTop_toTopOf="@+id/buildingListItemName" />
 
     <ImageButton
-      android:id="@+id/btnBuildingListItemRemove"
-      android:layout_width="16dp"
-      android:layout_height="16dp"
-      android:background="@android:color/transparent"
-      app:layout_constraintBottom_toBottomOf="@+id/btnBuildingListItemEdit"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toTopOf="@+id/btnBuildingListItemEdit"
-      app:srcCompat="@drawable/ic_delete" />
+        android:id="@+id/btnBuildingListItemRemove"
+        android:layout_width="11.25dp"
+        android:layout_height="15dp"
+        android:background="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBuildingListItemEdit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnBuildingListItemEdit" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
 

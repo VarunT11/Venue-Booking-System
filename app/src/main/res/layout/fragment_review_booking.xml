@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".ui.home.review.ReviewBookingFragment">
+
+
+    <TextView
+        android:id="@+id/tvReviewBookingTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="TextView"
+        android:textColor="#9BA0AE"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/ic_calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingTitle" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="TextView"
+        android:textColor="#9BA0AE"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/ic_clock"
+        android:drawablePadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingTitle" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="8dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="TextView"
+        android:textColor="#9BA0AE"
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingDate" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingExpectedStrengthLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Expected Strength:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingLocation" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingExpectedStrength"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReviewBookingExpectedStrengthLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvReviewBookingExpectedStrengthLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvReviewBookingExpectedStrengthLabel" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingVenueTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Venue Type:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingExpectedStrengthLabel" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingVenueType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReviewBookingVenueTypeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvReviewBookingVenueTypeLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvReviewBookingVenueTypeLabel" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Booking Type:"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingVenueTypeLabel" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReviewBookingTypeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvReviewBookingTypeLabel"
+        app:layout_constraintTop_toTopOf="@+id/tvReviewBookingTypeLabel" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="TextView"
+        android:textColor="#313465"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingTypeLabel" />
+
+    <Button
+        android:id="@+id/btnReviewBookingConfirm"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Confirm Booking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingDescription" />
+
+    <TextView
+        android:id="@+id/tvReviewBookingOrLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="OR"
+        android:textColor="#313465"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnReviewBookingConfirm"
+        app:layout_constraintStart_toStartOf="@+id/btnReviewBookingConfirm"
+        app:layout_constraintTop_toBottomOf="@+id/btnReviewBookingConfirm" />
+
+    <Button
+        android:id="@+id/btnReviewBookingChangeTime"
+        style="@style/FilledButtonTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Change Event Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewBookingOrLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
